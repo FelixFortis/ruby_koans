@@ -14,6 +14,10 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  if a + b <= c || a + c <= b || b + c <= a
+    raise TriangleError.new("Illegal Triangle!")
+  end
+
   if (a == b) and (b == c)
   	return :equilateral
   elsif (a == b) or (a == c) or (b == c)
