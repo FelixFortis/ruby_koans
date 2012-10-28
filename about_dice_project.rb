@@ -3,8 +3,15 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 # Implement a DiceSet Class here:
 #
 class DiceSet
-  def roll(*args)
 
+  attr_reader :values
+
+  def roll(numDie)
+    @values = []
+
+    numDie.downto(1) { |i|
+      @values.push(1 + rand(6))
+    }
   end
 end
 
